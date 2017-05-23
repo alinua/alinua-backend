@@ -24,9 +24,9 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
- * Class that establishes all database connection settings 
- * Using the Spring annotations
- * 
+ * This class plays the role of the spring context xml file
+ *
+ * Here, all the beans that handle the connection with the database
  * @author Yannick ADECHI
  *
  */

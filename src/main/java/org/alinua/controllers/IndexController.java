@@ -37,7 +37,7 @@ public class IndexController {
 
 	
 	
-	@RequestMapping( method = RequestMethod.GET)
+	@RequestMapping
 	public ModelAndView getIndex() {
 		
 		ModelAndView model = new ModelAndView("index");

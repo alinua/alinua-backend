@@ -13,8 +13,7 @@ import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
- * This class configures the Dispatcher Servlet by extending 
- * the AbstractAnnotationConfigDispatcherServletInitializer class
+ * This class configures the Dispatcher Servlet
  * 
  * @author Yannick ADECHI
  */
