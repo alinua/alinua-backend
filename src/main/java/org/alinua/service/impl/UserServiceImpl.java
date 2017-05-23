@@ -13,10 +13,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * @author yann
+ * @author Yannick ADECHI
  *
  */
-@Service("userService")
+@Transactional
+@Service("UserService")
 public class UserServiceImpl implements UserService {
 
 	@Autowired

@@ -5,11 +5,10 @@ package org.alinua.service;
 
 import java.util.List;
 
-
 import org.alinua.beans.User;
 
 /**
- * @author yann
+ * @author Yannick ADECHI
  *
  */
 public interface UserService {

@@ -1,16 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.alinua</groupId>
-  <artifactId>alinua</artifactId>
+  <artifactId>Alinua</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
+  <name>Alinua</name>
   
-  <properties>
-		<jdk.version>1.8</jdk.version>
-  </properties>
-  
-  <dependencies>  
-  
+  <dependencies>
   		<!-- SPRING -->
   		<!-- Spring Core -->
   		<dependency>
@@ -72,13 +68,20 @@
     		<version>4.12</version>
 		</dependency>
 		
+		<!-- Java Servlet API -->		
+		<dependency>
+    		<groupId>javax.servlet</groupId>
+    		<artifactId>javax.servlet-api</artifactId>
+    		<version>3.1.0</version>
+		</dependency>
 		
-		<!-- JSTL -->
+			<!-- JSTL -->
   		<dependency>
     		<groupId>javax.servlet.jsp.jstl</groupId>
     		<artifactId>javax.servlet.jsp.jstl-api</artifactId>
     		<version>1.2.1</version>
 		</dependency>
+		<!--  -->
 		
 		
 		<!-- JSON -->
@@ -95,43 +98,24 @@
     		<artifactId>mysql-connector-java</artifactId>
     		<version>5.1.41</version>
 		</dependency>
-		
-		<!-- Java Servlet API -->
-		<dependency>
-    		<groupId>javax.servlet</groupId>
-    		<artifactId>javax.servlet-api</artifactId>
-    		<version>3.1.0</version>
-		</dependency>
-
   </dependencies>
   
   <build>
   		<finalName>Alinua</finalName>
   		
   		<plugins>
-  		
-  			
+  		  			
   			<!-- Set JDK Compiler -->
   			<plugin>
   				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.6.1</version>
 				<configuration>
-					<source>${jdk.version}</source>
-					<target>${jdk.version}</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
   			</plugin>
-  			
-  			<!-- For Tomcat -->
-  			<plugin>
-  				<groupId>org.apache.tomcat.maven</groupId>
-				<artifactId>tomcat7-maven-plugin</artifactId>
-				<version>2.2</version>
-				<configuration>
-					<path>/alinua</path>
-				</configuration>
-  			</plugin>
-  			
+  			 			
   			<!-- Configuring the War Generation Plugin -->
   			<plugin>
             	<groupId>org.apache.maven.plugins</groupId>
@@ -142,6 +126,6 @@
            		</configuration>
        		</plugin>
   		</plugins> 
+  		
   </build>
- 
 </project>
