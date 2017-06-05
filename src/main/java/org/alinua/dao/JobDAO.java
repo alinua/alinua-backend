@@ -8,7 +8,7 @@ import java.util.List;
 import org.alinua.beans.Job;
 
 /**
- * DAO(Data Access Object) interface handling "JOBS" table
+ * DAO(Data Access Object) interface handling "JOBS" table CRUD operations
  * 
  * @author Yannick ADECHI
  *

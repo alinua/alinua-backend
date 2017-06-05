@@ -24,11 +24,11 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
- * This class configures Spring Application Context using Java-based Configuration
+ * This class configures Spring Application Context using Java-based Configurations.
  * It configures beans definitions using Java code instead of XML.
  * 
- * The @Configuration annotation is required for any Java-based configuration in Spring
- * The @EnableTransactionManager annotation enables Spring’s annotation-driven transaction management capability
+ * The @Configuration annotation is required for any Java-based configuration in Spring.
+ * The @EnableTransactionManager annotation enables Spring’s annotation-driven transaction management capability.
  * 
  * @author Yannick ADECHI
  *

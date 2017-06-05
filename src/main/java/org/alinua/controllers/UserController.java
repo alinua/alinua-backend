@@ -19,7 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * Controller that handles users operations
+ * Controller that handles users operations.
+ *
  * @author Yannick ADECHI
  *
  */

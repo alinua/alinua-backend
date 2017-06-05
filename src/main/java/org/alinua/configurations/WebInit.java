@@ -14,7 +14,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 /**
  * We will not use web.xml. Spring provides WebApplicationInitializer interface
- * It detects the class automatically and intializes Dispatcher Servlet.
+ * Spring detects the class automatically and initializes Dispatcher Servlet.
  * 
  * @author Yannick ADECHI
  */

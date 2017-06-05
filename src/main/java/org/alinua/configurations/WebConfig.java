@@ -32,8 +32,8 @@ import org.springframework.web.servlet.view.velocity.VelocityView;
 import org.springframework.web.servlet.view.velocity.VelocityViewResolver;
 
 /**
- * This class configures Spring MVC View Resolvers
- * Spring MVC Configuration required for dispatcher servlet to create handlers, and view resolvers
+ * This class configures Spring MVC View Resolvers.
+ * Spring MVC Configuration required for dispatcher servlet to create handlers, and view resolvers.
  * 
  * The @Configuration annotation is required for any Java-based configuration in Spring
  * 

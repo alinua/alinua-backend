@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Controller that handles jobs operations
+ * Controller that handles jobs operations.
  * 
  * @author Yannick ADECHI
  *

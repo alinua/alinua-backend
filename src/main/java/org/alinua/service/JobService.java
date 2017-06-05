@@ -8,7 +8,7 @@ import java.util.List;
 import org.alinua.beans.Job;
 
 /**
- * Service Layer that uses JobDAO classes
+ * Service layer that uses JobDAO classes
  * 
  * @author Yannick ADECHI
  *

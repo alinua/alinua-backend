@@ -21,7 +21,7 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
- * Class representing the "USERS" table in the database.
+ * Class representing "USERS" table in the database.
  * 
  * We embed JPA annotations directly into the model class.
  * 

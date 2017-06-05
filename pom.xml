@@ -99,19 +99,13 @@
 		</dependency>
 		
 		
-		<!-- JSON -->
-  		<dependency>
-    		<groupId>org.json</groupId>
-    		<artifactId>json</artifactId>
-    		<version>20160810</version>
-		</dependency>
-		
 		<!-- Velocity -->
 		<dependency>
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity</artifactId>
             <version>1.7</version>
         </dependency>
+		
 		
 		<!-- MySQL Connector -->
   		<dependency>
@@ -120,6 +114,7 @@
     		<version>5.1.41</version>
 		</dependency>
   </dependencies>
+  
   
   <build>
   		<finalName>Alinua</finalName>
