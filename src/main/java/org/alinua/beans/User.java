@@ -5,17 +5,26 @@ package org.alinua.beans;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
- * Class representing the "USERS" table in the database
- *
+ * Class representing the "USERS" table in the database.
+ * 
+ * We embed JPA annotations directly into the model class.
+ * 
  * @author Yannick ADECHI
  *
  */
@@ -28,7 +37,7 @@ public class User implements Serializable{
 	private String username;
 	private String email;
 	private Timestamp last_connection;
-	//private List<Job> jobs;
+	private List<Job> jobs;
 	
 	
 	/**
@@ -36,13 +45,14 @@ public class User implements Serializable{
 	 */
 	public User() {
 		super();
+		last_connection = new Timestamp(1444444444);
 		//this.jobs = null;
 		// TODO Auto-generated constructor stub
 	}
 
 
 	/**
-	 * @return Integer
+	 * @return id
 	 */
 	@Id
 	@GeneratedValue( strategy = GenerationType.IDENTITY)
@@ -54,7 +64,7 @@ public class User implements Serializable{
 	
 	/**
 	 * the id to set
-	 * @param Integer 
+	 * @param id 
 	 */
 	public void setId(Integer id) {
 		this.id = id;
@@ -62,7 +72,7 @@ public class User implements Serializable{
 	
 	
 	/**
-	 * @return String
+	 * @return username
 	 */
 	@Column( name = "USERNAME")
 	public String getUsername() {
@@ -72,7 +82,7 @@ public class User implements Serializable{
 	
 	/**
 	 * the username to set
-	 * @param String 
+	 * @param username 
 	 */
 	public void setUsername(String username) {
 		this.username = username;
@@ -80,7 +90,7 @@ public class User implements Serializable{
 
 	
 	/**
-	 * @return String
+	 * @return email
 	 */
 	@Column( name = "EMAIL")
 	public String getEmail() {
@@ -90,7 +100,7 @@ public class User implements Serializable{
 	
 	/**
 	 * the email to set
-	 * @param String 
+	 * @param email 
 	 */
 	public void setEmail(String email) {
 		this.email = email;
@@ -98,7 +108,7 @@ public class User implements Serializable{
 
 	
 	/**
-	 * @return Timestamp
+	 * @return last_connection date
 	*/
 	//@Temporal(TemporalType.TIMESTAMP)
 	@Column( name = "LAST_CONNECTION_DATE")
@@ -108,7 +118,7 @@ public class User implements Serializable{
 
 	
 	/**
-	 * @param Timestamp 
+	 * @param last_connection 
 	 * the connection to set
 	*/ 
 	public void setLastConnection(Timestamp last_connection) {
@@ -117,21 +127,21 @@ public class User implements Serializable{
 
 	
 	/**
-	 * @return List<Job>
-	
-	//@OneToMany( mappedBy = "user", cascade = CascadeType.ALL)
-	//@OrderBy("POSTED_DATE")
+	 * @return jobs
+	*/
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+	@JsonIgnore
 	public List<Job> getJobs() {
 		return jobs;
 	}
 
 
 	/**
-	 * @param List<Job>
-	 
+	 * @param jobs
+	*/ 
 	public void setJobs(List<Job> jobs) {
 		this.jobs = jobs;
-	}*/
+	}
 
 	
 	/* (non-Javadoc)

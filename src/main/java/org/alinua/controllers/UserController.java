@@ -9,36 +9,38 @@ import org.alinua.beans.User;
 import org.alinua.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
+ * Controller that handles users operations
  * @author Yannick ADECHI
  *
  */
-@Controller
+@RestController
 public class UserController {
 
 	@Autowired
 	private UserService service;
 	
-	@GetMapping("/users")
-	public ModelAndView getAllUsers() {
-		ModelAndView model = new ModelAndView("usersTest");
-		List<User> users = service.getAllUsers();
-		
-		model.addObject("users", users);
-		return model;
+	   
+	@RequestMapping("")
+	public List<User> getAllUsers() {
+		List<User> users = service.getAllUsers();	
+		return users;
 	}
 	
-	@GetMapping("/users/user/{userId}")
-	public ModelAndView getUser(@PathVariable("userId") Integer id){
-		ModelAndView model = new ModelAndView("usersTest");
+	
+	@RequestMapping("")
+	public User getUser(@PathVariable("userId") Integer id){
 		User user = new User();
 		user = service.findUser(id);
-		model.addObject("user", user);
-		return model;
+		return user;
 	}
 }

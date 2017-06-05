@@ -3,6 +3,8 @@
  */
 package org.alinua.beans;
 
+import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -16,25 +18,26 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.hibernate.annotations.GenericGenerator;
 
 /**
- * Class representing the "JOB" table in the database
+ * Class representing the "JOB" table in the database.
+ * 
+ * We embed JPA annotations directly into the model class.
  * 
  * @author Yannick ADECHI
  *
  */
 
-//@Entity
-//@Table( name = "JOB")
-public class Job{
+@Entity
+@Table( name = "JOBS")
+public class Job implements Serializable{
 
 	private Integer id;
 	private String title;
 	private String lead;
 	private String content;
-	private Date posted;
-	private Date validity;
+	private Timestamp posted;
+	private int validity;
 	
 	private User user;
 	
@@ -51,8 +54,9 @@ public class Job{
 	/**
 	 * @return the id
 	 */
-	//@Id
-	//@GeneratedValue( strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue( strategy = GenerationType.IDENTITY)
+	@Column( name = "ID")
 	public Integer getId() {
 		return id;
 	}
@@ -69,7 +73,7 @@ public class Job{
 	/**
 	 * @return the title
 	 */
-	//@Column( name = "TITLE")
+	@Column( name = "TITLE")
 	public String getTitle() {
 		return title;
 	}
@@ -86,7 +90,7 @@ public class Job{
 	/**
 	 * @return the lead
 	 */
-	//@Column( name = "LEAD")
+	@Column( name = "LEAD")
 	public String getLead() {
 		return lead;
 	}
@@ -103,7 +107,7 @@ public class Job{
 	/**
 	 * @return the content
 	 */
-	//@Column( name = "CONTENT")
+	@Column( name = "CONTENT")
 	public String getContent() {
 		return content;
 	}
@@ -120,9 +124,8 @@ public class Job{
 	/**
 	 * @return the posted
 	 */
-	//@Temporal(TemporalType.DATE)
-	//@Column( name = "POSTED_DATE")
-	public Date getPosted() {
+	@Column( name = "POSTED_DATE")
+	public Timestamp getPosted() {
 		return posted;
 	}
 
@@ -130,7 +133,7 @@ public class Job{
 	/**
 	 * @param posted the posted to set
 	 */
-	public void setPosted(Date posted) {
+	public void setPosted(Timestamp posted) {
 		this.posted = posted;
 	}
 
@@ -138,9 +141,8 @@ public class Job{
 	/**
 	 * @return the validity
 	 */
-	//@Temporal(TemporalType.DATE)
-	//@Column( name = "VALIDITY_DATE")
-	public Date getValidity() {
+	@Column( name = "VALIDITY")
+	public int getValidity() {
 		return validity;
 	}
 
@@ -148,7 +150,7 @@ public class Job{
 	/**
 	 * @param validity the validity to set
 	 */
-	public void setValidity(Date validity) {
+	public void setValidity(int validity) {
 		this.validity = validity;
 	}
 
@@ -156,8 +158,8 @@ public class Job{
 	/**
 	 * @return the user
 	*/ 
-	//@ManyToOne
-	//@JoinColumn( name = "USER_ID")
+	@ManyToOne
+	@JoinColumn( name = "USER_ID")
 	public User getUser() {
 		return user;
 	}

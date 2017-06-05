@@ -13,13 +13,24 @@ import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
- * This class configures the Dispatcher Servlet
+ * We will not use web.xml. Spring provides WebApplicationInitializer interface
+ * It detects the class automatically and intializes Dispatcher Servlet.
  * 
  * @author Yannick ADECHI
  */
 public class WebInit implements WebApplicationInitializer {
 
-	
+	/**
+	 * onStartup() method is invoked when the Servlet container initializes the application. 
+	 * This method creates Spring Dispatcher Servlet dynamically to handle all requests 
+	 * coming through the application.
+	 * 
+	 * 
+	 *  The Spring Dispatcher Servlet takes an AnnotationConfigWebApplicationContext 
+	 *  which is responsible for Spring-related initializations using annotations.
+	 *  The classes that do the configurations are 
+	 *  {@link org.alinua.configurations.HibernateConfig} & {@link org.alinua.configurations.WebConfig}
+	 */
 	@Override
 	public void onStartup(ServletContext servletContext) throws ServletException {
 		// TODO Auto-generated method stub

@@ -24,9 +24,12 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
- * This class plays the role of the spring context xml file
- *
- * Here, all the beans that handle the connection with the database
+ * This class configures Spring Application Context using Java-based Configuration
+ * It configures beans definitions using Java code instead of XML.
+ * 
+ * The @Configuration annotation is required for any Java-based configuration in Spring
+ * The @EnableTransactionManager annotation enables Spring’s annotation-driven transaction management capability
+ * 
  * @author Yannick ADECHI
  *
  */
@@ -41,9 +44,13 @@ public class HibernateConfig {
 	
 	
 	/**
-	 * Initialize SessionFactory Bean
+	 * This method initializes a SessionFactory bean
 	 * 
-	 * @return LocalSessionFactoryBean
+	 * For Java-based configuration, 
+	 * Spring provides the LocalSessionFactoryBuilder 
+	 * that facilitates the creation of Hibernate’s SessionFactory
+	 * 
+	 * @return nFactorysessio
 	 */
 	@Bean
 	public LocalSessionFactoryBean sessionFactory() {
@@ -56,7 +63,7 @@ public class HibernateConfig {
 	
 	
 	/**
-	 * Initialize dataSource
+	 * This method configures a DataSource to be used with Hibernate’s SessionFactory
 	 * 
 	 * @return DataSource
 	 */
@@ -86,8 +93,16 @@ public class HibernateConfig {
 	
 	
 	/**
-	 * Initialize HibernateTransactionManager with SessionFactory
+	 * This method is for automatic transaction support for the SessionFactory
 	 * 
+	 * By configuring a transaction manager, 
+	 * code in the DAO classes doesn’t have to 
+	 * take care of transaction management explicitly.
+	 * 
+	 * Instead, the @Transactional annotation is used 
+	 * to tell Spring automatically inserts transaction management code 
+	 * into the bytecode.
+	 *  
 	 * @param SessionFactory
 	 * 
 	 * @return HibernateTransactionManager
@@ -99,10 +114,4 @@ public class HibernateConfig {
 	       return txManager;
 	}
 	
-	
-	/*@Autowired
-	@Bean(name = "UserService")
-	public UserService getUserService(){
-		return new UserServiceImpl();
-	}*/
 }

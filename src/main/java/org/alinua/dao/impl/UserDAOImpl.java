@@ -16,6 +16,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 /**
+ * Implementation of the DAO(Data Access Object) interface {@link org.alinua.dao.UserDAO}
+ * For CRUD(Create Read Update Delete) operations on user entity
+ * 
  * @author Yannick ADECHI
  *
  */
@@ -28,7 +31,7 @@ public class UserDAOImpl implements UserDAO {
 	
 	/**
 	 * Save user's informations in the database
-	 * @param User
+	 * @param user
 	 * @see org.alinua.dao.UserDAO#saveUser(User)
 	 */
 	@Override
@@ -40,32 +43,32 @@ public class UserDAOImpl implements UserDAO {
 	
 	/**
 	 * Update user's informations in the database
-	 * @param User
+	 * @param user
 	 * @see org.alinua.dao.UserDAO#updateUser(User)
 	 */
 	@Override
 	public void updateUser(User user) {
 		// TODO Auto-generated method stub
-		
+		sessionFactory.getCurrentSession().update(user);
 	}
 
 	
 	/**
-	 * Delete an user in the database using his id
-	 * @param Integer
+	 * Delete an user in the database
+	 * @param user
 	 * @see org.alinua.dao.UserDAO#deleteUser(Integer)
 	 */
 	@Override
-	public void deleteUser(Integer id) {
+	public void deleteUser(User user) {
 		// TODO Auto-generated method stub
-		
+		sessionFactory.getCurrentSession().delete(user);
 	}
 
 	
 	/**
 	 * Find an user in the database using his id
-	 * @param Integer
-	 * @return User
+	 * @param id
+	 * @return user | null
 	 * @see org.alinua.dao.UserDAO#findUser(Integer)
 	 */
 	@Override
@@ -76,8 +79,8 @@ public class UserDAOImpl implements UserDAO {
 	
 	
 	/** 
-	 * Return all users informations strored in the database
-	 * @return List<User>
+	 * Return all the users stored in the database
+	 * @return users | null
 	 * @see org.alinua.dao.UserDAO#getAllUsers()
 	 */
 	@Override

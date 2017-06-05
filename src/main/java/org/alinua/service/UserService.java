@@ -8,6 +8,8 @@ import java.util.List;
 import org.alinua.beans.User;
 
 /**
+ * Service layer that uses UserDAO classes
+ * 
  * @author Yannick ADECHI
  *
  */
@@ -32,7 +34,7 @@ public interface UserService {
 	 * 
 	 * @param user
 	 */
-	void deleteUser(Integer id);
+	void deleteUser(User user);
 	
 	
 	/**

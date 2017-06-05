@@ -13,6 +13,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
+ * 
+ * When a class is annotated by @Transactionnal 
+ * Spring will inject transaction support code into the methods
+ * 
  * @author Yannick ADECHI
  *
  */
@@ -25,7 +29,6 @@ public class UserServiceImpl implements UserService {
 	
 	
 	@Override
-	@Transactional
 	public void saveUser(User user) {
 		// TODO Auto-generated method stub
 		dao.saveUser(user);
@@ -40,9 +43,9 @@ public class UserServiceImpl implements UserService {
 
 	
 	@Override
-	public void deleteUser(Integer id) {
+	public void deleteUser(User user) {
 		// TODO Auto-generated method stub
-		dao.deleteUser(id);
+		dao.deleteUser(user);
 	}
 
 	
