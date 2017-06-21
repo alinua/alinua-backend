@@ -16,7 +16,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * Implementation of the DAO(Data Access Object) interface {@link org.alinua.dao.JobDAO}
- * For CRUD(Create Read Update Delete) operations on job entity.
+ * For CRUD(Create Read Update Delete) operations on job entity
  * 
  * @author Yannick ADECHI
  *

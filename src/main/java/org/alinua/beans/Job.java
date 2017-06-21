@@ -20,7 +20,7 @@ import javax.persistence.TemporalType;
 
 
 /**
- * Class representing the "JOBS" table in the database.
+ * Class representing the "JOB" table in the database.
  * 
  * We embed JPA annotations directly into the model class.
  * 

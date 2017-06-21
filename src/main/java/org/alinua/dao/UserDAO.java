@@ -8,7 +8,7 @@ import java.util.List;
 import org.alinua.beans.User;
 
 /**
- * DAO(Data Access Object) interface handling "USERS" table CRUD operations
+ * DAO(Data Access Object) interface handling "USERS" table
  * 
  * @author Yannick ADECHI
  *

@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Controller that handles jobs operations.
+ * Controller that handles jobs operations
  * 
  * @author Yannick ADECHI
  *
@@ -35,7 +35,7 @@ public class JobController {
 	
 	/**
 	 * Get all the jobs
-	 * @return ResponseEntity
+	 * @return jobs
 	 */
 	@RequestMapping( value = "/jobs", method = RequestMethod.GET)
 	public List<Job> getAllJobs() {
@@ -47,7 +47,7 @@ public class JobController {
 	/**
 	 * Get a job by his id
 	 * @param id
-	 * @return ResponseEntity
+	 * @return the job
 	 */
 	@RequestMapping( value = "/jobs/job/{jobId}", method = RequestMethod.GET)
 	public Job getJob(@PathVariable("jobId") Integer id) {

@@ -3,44 +3,37 @@
  */
 package org.alinua.beans;
 
-import java.util.Date;
+import java.io.Serializable;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-import org.hibernate.annotations.GenericGenerator;
 
 /**
- * Class representing the "PROFILE" table in the database
- * 
  * @author Yannick ADECHI
  *
  */
 
-//@Entity
-//@Table( name = "PROFILE")
-public class Profile{
+@Entity
+@Table( name = "PROFILES")
+public class Profile implements Serializable{
 
 	private Integer id;
-	private String first_name;
-	private String last_name;
+	private String firstName;
+	private String lastName;
+	private String headline;
+	private String summary;
+	private String emailAdress;
+	private String industry;
+	private String pictureUrl;
 	private String location;
-	private Date birthday;
-	
-	private User user;
 	
 	
 	/**
-	 * Constructor
+	 * 
 	 */
 	public Profile() {
 		super();
@@ -51,93 +44,10 @@ public class Profile{
 	/**
 	 * @return the id
 	 */
-	//@Id
-	//@GeneratedValue( strategy = GenerationType.IDENTITY)
+	@Id
+	@Column( name = "ID")
 	public Integer getId() {
 		return id;
-	}
-
-	
-	/**
-	 * @return the first_name
-	 */
-	//@Column( name = "FIRST_NAME")
-	public String getFirst_name() {
-		return first_name;
-	}
-
-
-	/**
-	 * @param first_name 
-	 * the first_name to set
-	 */
-	public void setFirst_name(String first_name) {
-		this.first_name = first_name;
-	}
-
-
-	/**
-	 * @return the last_name
-	 */
-	//@Column( name = "LAST_NAME")
-	public String getLast_name() {
-		return last_name;
-	}
-
-
-	/**
-	 * @param last_name 
-	 * the last_name to set
-	 */
-	public void setLast_name(String last_name) {
-		this.last_name = last_name;
-	}
-
-
-	/**
-	 * @return the location
-	 */
-	//@Column( name = "LOCATION")
-	public String getLocation() {
-		return location;
-	}
-
-
-	/**
-	 * @param location 
-	 * the location to set
-	 */
-	public void setLocation(String location) {
-		this.location = location;
-	}
-
-
-	/**
-	 * @return the birthday
-	 */
-	//@Temporal(TemporalType.DATE)
-	//@Column( name = "BIRTHDAY_DATE")
-	public Date getBirthday() {
-		return birthday;
-	}
-
-
-	/**
-	 * @param birthday 
-	 * the birthday to set
-	 */
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
-	}
-
-
-	/**
-	 * @return the user
-	*/ 
-	//@OneToOne( cascade = CascadeType.ALL)
-	//@JoinColumn( name = "USER_ID")
-	public User getUser() {
-		return user;
 	}
 
 
@@ -150,12 +60,140 @@ public class Profile{
 
 
 	/**
-	 * @param user 
-	 * the user to set
-	*/ 
-	public void setUser(User user) {
-		this.user = user;
+	 * @return the firstName
+	 */
+	@Column( name = "FIRSTNAME")
+	public String getFirstName() {
+		return firstName;
 	}
+
+
+	/**
+	 * @param firstName the firstName to set
+	 */
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+
+	/**
+	 * @return the lastName
+	 */
+	@Column( name = "LASTNAME")
+	public String getLastName() {
+		return lastName;
+	}
+
+
+	/**
+	 * @param lastName the lastName to set
+	 */
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+
+	/**
+	 * @return the headline
+	 */
+	@Column( name = "HEADLINE")
+	public String getHeadline() {
+		return headline;
+	}
+
+
+	/**
+	 * @param headline the headline to set
+	 */
+	public void setHeadline(String headline) {
+		this.headline = headline;
+	}
+
+
+	/**
+	 * @return the summary
+	 */
+	@Column( name = "SUMMARY")
+	public String getSummary() {
+		return summary;
+	}
+
+
+	/**
+	 * @param summary the summary to set
+	 */
+	public void setSummary(String summary) {
+		this.summary = summary;
+	}
+
+
+	/**
+	 * @return the emailAdress
+	 */
+	@Column( name = "EMAILADRESS")
+	public String getEmailAdress() {
+		return emailAdress;
+	}
+
+
+	/**
+	 * @param emailAdress the emailAdress to set
+	 */
+	public void setEmailAdress(String emailAdress) {
+		this.emailAdress = emailAdress;
+	}
+
+
+	/**
+	 * @return the industry
+	 */
+	@Column( name = "INDUSTRY")
+	public String getIndustry() {
+		return industry;
+	}
+
+
+	/**
+	 * @param industry the industry to set
+	 */
+	public void setIndustry(String industry) {
+		this.industry = industry;
+	}
+
+
+	/**
+	 * @return the pictureUrl
+	 */
+	@Column( name = "PICTUREURL")
+	public String getPictureUrl() {
+		return pictureUrl;
+	}
+
+
+	/**
+	 * @param pictureUrl the pictureUrl to set
+	 */
+	public void setPictureUrl(String pictureUrl) {
+		this.pictureUrl = pictureUrl;
+	}
+
+
+	/**
+	 * @return the location
+	 */
+	@Column( name = "LOCATION")
+	public String getLocation() {
+		return location;
+	}
+
+
+	/**
+	 * @param location the location to set
+	 */
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
 
 
 	/* (non-Javadoc)
@@ -163,10 +201,11 @@ public class Profile{
 	 */
 	@Override
 	public String toString() {
-		return "Profile [id=" + id + ", first_name=" + first_name
-				+ ", last_name=" + last_name + ", location=" + location
-				+ ", birthday=" + birthday + ", id_user=" + user.getId() +" ]";
+		return "Profile [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", headline=" + headline
+				+ ", summary=" + summary + ", emailAdress=" + emailAdress + ", industry=" + industry + ", pictureUrl="
+				+ pictureUrl + ", location=" + location + "]";
 	}
+	
 	
 	
 }
